@@ -9,8 +9,6 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 #GEN_HTML = "%s APItestreport1.html" %(time.time())
 #f = open(GEN_HTML,'w')
-
-
 message = """
 <!DOCTYPE html>
 <html>
