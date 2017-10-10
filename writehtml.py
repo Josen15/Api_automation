@@ -1,21 +1,12 @@
 #!/usr/bin/env python
 #  -*- coding:utf-8 -*-
-
-
-
 import webbrowser
 import time
 from readexcel import gettime
  #命名生成的html
-
- 
 GEN_HTML = "%s APItestreport.html" %(gettime())
 #print "C:\\Users\\user\\Desktop\\Api-automation\\%s"%GEN_HTML
 f = open("C:\\Users\\user\\Desktop\\Api-automation\\%s"%GEN_HTML,'w')
-
-
-	
-
 def testreport(head):
 	report="""
 
