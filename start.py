@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
 import requests
 import json,io,sys,unittest
 from readexcel import getdata
