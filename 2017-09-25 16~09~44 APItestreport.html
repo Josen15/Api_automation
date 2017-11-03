@@ -5,6 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset="utf-8" /> 
 		<title></title>
+		<script src="http://code.jquery.com/jquery-1.4.1.js"></script>
 	</head>
 	<style>
 		table
@@ -23,6 +24,9 @@
 		 word-break:break-all; /*支持IE，chrome，FF不支持*/
 		 word-wrap:break-word;/*支持IE，chrome，FF*/
      }
+	 .show_de{
+		display:none;
+	 }
 	</style>
 	<body>
 		<h1 align="center">极速钱包接口测试报告</h1>
@@ -131,9 +135,13 @@
       <td>不正常借款</td>
       <td>200</td>
 	  <td>0.03</td>
-      <td><p style='color:red;'>{"code":-2,"message":"登录态失效","data":{"item":[]}}</p></td>
+      <td><p style='color:red;' onclick="show()">不通过</p><p class="show_de" style='color:red;'>{"code":-2,"message":"登录态失效","data":{"item":[]}}</p></td>
     </tr>
-	
+	<script>
+		var result_s = document.getElementByClassName("result");
+			document.getElementByClassName("show_de")[].style.display="block";
+		}
+	</script>
 	<tr>
       <td>不正常借款card_type为空</td>
       <td>200</td>

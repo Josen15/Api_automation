@@ -77,6 +77,13 @@ def getdata(filename):
 	data=[]
 	for c in array:
 		data.append(c+[sheets[array.index(c)]])
+	data1=[]
+	#print len(data)
+	for z in data:
+		if str(z[0])==str("[]"):
+			
+			data.remove(z)
+		
 	return data
 
 def gettime():

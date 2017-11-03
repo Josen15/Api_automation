@@ -8,7 +8,7 @@ from writehtml import returnreport
 from sendemail import sendreport
 reload(sys)
 #sys.setdefaultencoding('utf-8')
-environment="dev-347-bind-card-ja3a0u"
+environment="dev-ps-900-index-pid0sl"
 suffix=".kdqugou.com"
 if environment[0:3]=="dev":
 	env=environment+".dev"+suffix
