@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+
 import requests
 import json,io,sys,unittest,time
 from readexcel import getdata
@@ -15,6 +16,7 @@ message = """
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset="utf-8" /> 
 		<title></title>
+		<script src="http://code.jquery.com/jquery-1.4.1.js"></script>
 	</head>
 	<style>
 		table
@@ -45,6 +47,7 @@ message = """
 def testapi(env,status):
 	list=status
 
+	#print len(list)
 	cookielist=[]
 	write(message)
 	for x in list:
@@ -69,13 +72,15 @@ def testapi(env,status):
 						#print  '%.2f'%responsetime
 
 						list1.append(u"通过")
+						list1.append("<p class='show' style='display: none;'>"+postresponse.text+"</p>")
 						if code==0:
 							cookielist.append(postresponse.cookies)
 						
 					else:	
-						print postresponse.text
-						list1.append(postresponse.text)
-					#print list1
+						#print postresponse.text
+						list1.append(u"不通过")
+						list1.append("<p class='show' style='display: none;'>"+postresponse.text+"</p>")
+					
 					write(content(list1))
 		else:
 			requestdata=x[:-3]		
@@ -96,11 +101,13 @@ def testapi(env,status):
 						if i[1]==code:
 							
 							list2.append(u"通过")
+							list2.append("<p class='show' style='display: none;'>"+getresponse.text+"</p>")
 							#print i[2]+'  测试  '+u'通过'
 						else:	
 							#print getresponse.text
-							list2.append("<p style='color:red;'>"+getresponse.text+"</p>")
-						#print list2
+							list2.append(u"不通过")
+							list2.append("<p class='show' style='display: none;'>"+getresponse.text+"</p>")
+						
 						write(content(list2))
 					else:
 						list3=[]
@@ -115,17 +122,20 @@ def testapi(env,status):
 							#print i[2]+'  测试  '+u'通过'
 							
 							list3.append(u"通过")
+							list3.append("<p class='show' style='display: none;'>"+postreturn.text+"</p>")
+							
 						else:	
 							#print postreturn.text
-							list3.append("<p style='color:red;'>"+postreturn.text+"</p>")
-						#print list3
+							list3.append(u"不通过")
+							list3.append("<p class='show' style='display: none;'>"+postreturn.text+"</p>")
+							
 						write(content(list3))
 	bottom()
 							
 							
 					
 
-#testapi("http://dev-210-daily-opt-d64mpn.dev.kdqugou.com",getdata(r'C://Users//user//Desktop//Api-automation//Apidata.xls'))			
+#testapi("http://dev-ps-900-index-pid0sl.dev.kdqugou.com",getdata(r'C://Users//user//Desktop//Api-automation//Apidata.xls'))
 						
 						
 

@@ -27,9 +27,9 @@ def content(list):
       <td>%s</td>
       <td>%s</td>
 	  <td>%s</td>
-      <td>%s</td>
+      <td  class="result"><p>%s</p>%s</td>
     </tr>
-	'''%(list[0],list[1],list[2],list[3])
+	'''%(list[0],list[1],list[2],list[3],list[4])
 	return mid
 
 
@@ -41,7 +41,17 @@ def bottom():
 	bot="""
 	  </table>
 		</div>
+		
 	</body>
+		<script>
+		$('.result').click(function(){
+			if($(this).find('.show').attr('style') == 'display: none;'){
+				$(this).find('.show').show();
+			}else{
+				$(this).find('.show').hide();
+			}
+		})
+	</script>
 </html>
 """
 	write(bot)
