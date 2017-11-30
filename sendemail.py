@@ -9,7 +9,7 @@ from writehtml import gettime
 def sendreport(n,filename):
 	_user = "865349382@qq.com"
 	_pwd = "wibwfnhfpujjbccd"
-	_to = n+"@qq.com" # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
+	_to = n # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
 
 #创建一个带附件的实例
 	message = MIMEMultipart()
