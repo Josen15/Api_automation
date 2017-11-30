@@ -80,9 +80,8 @@ else:
 			list=list+getdata(x)
 
 testapi("http://"+env,list)
-#print returnreport()
 sendreport("865349382@qq.com",returnreport())
-#testapi("http://dev-210-daily-opt-d64mpn.dev.kdqugou.com",getdata(r'C://Users//user//Desktop//Api-automation//Apidata.xls'))
+
 
 
 	
